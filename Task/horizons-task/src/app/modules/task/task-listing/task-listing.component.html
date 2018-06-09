@@ -1,0 +1,37 @@
+<div class="container">
+    <h1 class="header">Task Listing</h1>
+    
+    <a routerLink="/tasks/add">
+        <i class="fa fa-plus-square"></i>
+    </a>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task Name</th>
+                <th scope="col">Task Description</th>
+                <th scope="col">Assignee Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks">
+                <th scope="row">{{task.id}}</th>
+                <td>{{task.name}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.assigneeName}}</td>
+                <td>{{task.date}}</td>
+                <td>
+                    <a>
+                        <i [routerLink]="['../tasks/edit', task.id]" class="fa fa-edit"></i>
+                    </a> 
+                    <a (click)="deleteTask(task.id)">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

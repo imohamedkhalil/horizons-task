@@ -1,0 +1,22 @@
+<div class="container">
+  <button class="btn btn-primary back-btn" (click)="goBack()">Go Back</button>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate>
+    <div class="form-group">
+      <label for="name">Task Name</label>
+      <input type="text" name="name" class="form-control" [(ngModel)]="name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Task Description</label>
+      <input type="text" class="form-control" name="description" [(ngModel)]="description" id="description">
+    </div>
+    <div class="form-group">
+      <label for="assigneeName">Assignee Name</label>
+      <input type="text" class="form-control" name="assigneeName" [(ngModel)]="assigneeName" id="assigneeName">
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="text" name="date" placeholder="eg. mm/dd/yyyy" class="form-control" [(ngModel)]="date" id="date">
+    </div>
+    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <button class="btn btn-primary back-btn" (click)="goBack()">Go Back</button>
+  <form #f="ngForm" (ngSubmit)="onSave(f)">
+    <div class="form-group">
+      <label for="name">Task Name</label>
+      <input type="text" placeholder="{{task.name}}" name="name" class="form-control" [(ngModel)]="name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Task Description</label>
+      <input type="text" placeholder="{{task.description}}" class="form-control" name="description" [(ngModel)]="description" id="description">
+    </div>
+    <div class="form-group">
+      <label for="assigneeName">Assignee Name</label>
+      <input type="text" placeholder="{{task.assigneeName}}" class="form-control" name="assigneeName" [(ngModel)]="assigneeName" id="assigneeName">
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="text" placeholder="{{task.date}}" name="date" class="form-control" [(ngModel)]="date" id="date">
+    </div>
+    <button type="submit" class="btn btn-primary submit-btn">Save</button>
+  </form>
+</div>
